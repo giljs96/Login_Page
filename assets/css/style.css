@@ -1,0 +1,89 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(45deg, #608ba5, #80b6bb);
+    background-size: cover; 
+    max-width: 1440px;  
+}
+div{
+    background-color: rgba(50, 47, 66, 0.856);
+    position: absolute; /* o box ocupará apenas o espaço dos seus elementos */
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%); /* volta esses valores nos eixos x e y, respectivamente */  
+    padding: 70px; /* ajuste do espaço interno entre os elementos e a borda do box */
+    border-radius: 10px;
+    color:#fff;
+}
+h1{
+    margin-top: 0px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.input{
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.sub-button{
+    border:none;
+    background-color: rgb(173, 167, 167);
+    padding: 5%;
+    width: 100%;
+    border-radius: 5px;
+    color:#fff;
+    font-size:16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.sub-button:hover{
+    background-color: rgb(131, 127, 127);
+    cursor: pointer;
+}
+
+@media (min-width:374px) and (max-width: 424px){
+    div{
+        padding:60px;
+    }
+
+    h1{
+        font-size: 28px;
+    }
+
+    .input{
+        padding: 13px;
+        font-size: 13px; 
+    }
+}
+
+@media (min-width:321px) and (max-width: 373px){
+    div{
+        padding:50px;
+    }
+
+    h1{
+        font-size: 28px;
+    }
+
+    .input{
+        padding: 13px;
+        font-size: 13px; 
+    }    
+}
+
+@media (max-width: 320px){
+    div{
+        padding:40px;
+    }
+
+    h1{
+        font-size: 20px;
+    }
+
+    .input{
+        padding: 13px;
+        font-size: 12px; 
+    }
+}
