@@ -1,3 +1,7 @@
+<?php 
+// This way php interprets this file as a CSS stylesheet 
+header("Content-type: text/css"); ?>
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-image: linear-gradient(45deg, #608ba5, #80b6bb);
@@ -6,11 +10,11 @@ body{
 }
 div{
     background-color: rgba(50, 47, 66, 0.856);
-    position: absolute; /* o box ocupará apenas o espaço dos seus elementos */
+    position: absolute; /* the box will only occupy the space of its elements */
     top: 50%;
     left:50%;
-    transform: translate(-50%, -50%); /* volta esses valores nos eixos x e y, respectivamente */  
-    padding: 70px; /* ajuste do espaço interno entre os elementos e a borda do box */
+    transform: translate(-50%, -50%); /* it returns these values ​​on the x and y axes, respectively */  
+    padding: 70px; /* adjustment of the internal space between the elements and the border of the box */
     border-radius: 10px;
     color:#fff;
 }

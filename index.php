@@ -1,42 +1,50 @@
 <?php
 include('conection.php');
 
-//verificação se há 
+//this block checks for information in the database
 if(isset($_POST['email']) || isset($_POST['password_user'])) {
 
+
     if(strlen($_POST['email']) == 0){
-        echo "Preencha seu email";
+        echo "Please type your email";
     } else if(strlen($_POST['password_user']) == 0){
-        echo "Preencha sua senha";
+        echo "Please type your password";
     } else {
-        //para limpar o email e a senha (buscar msqli)
+        
+        //this code block has the function of clearing the email and password -(search for msqli)-
         $email = $mysqli->real_escape_string($_POST['email']);
         $password = $mysqli->real_escape_string($_POST['password_user']);
 
-        //sql query
+        //sql query in the database
         $sql_code = "SELECT * FROM users_db WHERE email = '$email' AND password_user = '$password' ";
         $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: ". $mysqli->error);
 
-        //the number of registers / vai retornar qunatas linhas essa consulta retornou
-        //CASO O RETORNO SEJA 0, NÃO HÁ EMAIL OU SENHA CORRESPONDENTE NA BASE DE DADOS
+        //the number of registers 
+        // it will return how many rows this query returned
+        //if the return is 0, there's no corresponding email or password in the database
         $qt = $sql_query->num_rows; 
 
+        //
         if($qt == 1) {
 
-            $user = $sql_query->fetch_assoc(); // pegar os dados e inserir nessa variável
+            // take the data and insert it into this variable
+            $user = $sql_query->fetch_assoc(); 
 
-            if(!isset($_SESSION)) { //comeãr uma sessao, caso não haja uma anteriormente
+            //it will start a session if there wasn't one previously
+            if(!isset($_SESSION)) { 
                 session_start();  
             }
             
-            //session é um tipo de variável, que mesmo a pessoa sendo válida, ela troca de página - pesquisar
+            //to search
             $_SESSION['id'] = $user['id'];
             $_SESSION['name'] = $user['name'];
 
-            header("Location: page.php"); //vai direcionar esse header, pelo HTTP, para O NAVEGADOR redirecionar o usuário para essa página
+            // it will change the request header
+            // it will direct this header, via HTTP, to THE BROWSER to redirect the user to this page
+            header("Location: page.php"); 
 
         } else {
-            echo "FALHA AO LOGAR! EMAIL OU SENHA INCORRETOS";
+            echo "Login failed, incorrect email or password!";
         }
 
     }
@@ -50,23 +58,23 @@ if(isset($_POST['email']) || isset($_POST['password_user'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Login</title>
+    <title>Login Page</title>
     <meta name="description" content="Página de Teste">
     <meta name="author" content="Gilberto Santos">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="style.php">
     <link rel="shortcut icon" type="imagex/png" href="/assets/img/img-icon.png">
 
 </head>
 
 <body>
     <div>
-        <h1>Área de Login</h1>
+        <h1>Login Area</h1>
         <form method="POST" action="">
-            <input class="input" name="email" type="email" placeholder="Digite seu e-mail" required>
+            <input class="input" name="email" type="email" placeholder="Type your e-mail" required>
             <br><br>
-            <input class="input" name="password_user" type="password" placeholder="Digite sua senha" required>
+            <input class="input" name="password_user" type="password" placeholder="Type your password" required>
             <br><br>
-            <input class="sub-button" type="submit" value="Fazer Login">
+            <input class="sub-button" type="submit" value="Login">
         </form>
     </div>
 

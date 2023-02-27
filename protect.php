@@ -4,6 +4,6 @@ if(!isset($_SESSION)){
     session_start();  
 }
 
-if(!isset($_SESSION['id'])) // não tem nenhuma sessão ID
-    die("Você não pode acessar essa pagina. Não está logado. <p><a href=\"index.php\">ENTRAR</a></p>")
+if(!isset($_SESSION['id'])) // There is no session Id
+    die("You cannot access this page. You are not logged in! <p><a href=\"index.php\">ENTRAR</a></p>")
 ?>
