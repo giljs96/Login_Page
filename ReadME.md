@@ -48,6 +48,10 @@ Password: test123
 Name: Dwight Schrute
 Email: beet_farm@email.com
 Password: idontlikejim123
+
+Name: Pam Beesly
+Email: pams2jim@email.com
+Password: ilikepaint
 ```
 
 ## Project Author
