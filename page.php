@@ -12,7 +12,7 @@ include ('protect.php')
 <body>
     Welcome to this new page, <?php echo $_SESSION['name']; ?>
     <p>
-        <a href="logout.php">Sair</a>
+        <a href="logout.php">Logout</a>
     </p>
 </body>
 </html>

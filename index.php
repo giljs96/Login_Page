@@ -1,10 +1,13 @@
 <?php
+
+//database connection access
 include('conection.php');
 
 //this block checks for information in the database
+// "email" and "password" are input's class name of the page's form
 if(isset($_POST['email']) || isset($_POST['password_user'])) {
 
-
+    // here there is a check if the fields are empty
     if(strlen($_POST['email']) == 0){
         echo "Please type your email";
     } else if(strlen($_POST['password_user']) == 0){
