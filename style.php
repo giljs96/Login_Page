@@ -18,6 +18,10 @@ div{
     border-radius: 10px;
     color:#fff;
 }
+.logged-in{
+    display:flex;
+    flex-direction: column;
+}
 h1{
     margin-top: 0px;
     font-size: 30px;
@@ -31,18 +35,21 @@ h1{
     font-size: 15px;
     border-radius: 5px;
 }
-.sub-button{
+a{
+    text-decoration: none;
+    text-align: center;
+}
+.sub-button, a{
     border:none;
     background-color: rgb(173, 167, 167);
     padding: 5%;
-    width: 100%;
     border-radius: 5px;
     color:#fff;
     font-size:16px;
     font-weight: bold;
     letter-spacing: 2px;
 }
-.sub-button:hover{
+.sub-button:hover, a:hover{
     background-color: rgb(131, 127, 127);
     cursor: pointer;
 }

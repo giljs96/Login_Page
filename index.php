@@ -1,9 +1,9 @@
 <?php
 
-//database connection access
+// database connection access
 include('conection.php');
 
-//this block checks for information in the database
+// this block checks for information in the database
 // "email" and "password" are input's class name of the page's form
 if(isset($_POST['email']) || isset($_POST['password_user'])) {
 
@@ -14,20 +14,22 @@ if(isset($_POST['email']) || isset($_POST['password_user'])) {
         echo "Please type your password";
     } else {
         
-        //this code block has the function of clearing the email and password -(search for msqli)-
+        // the login code
+        // this code block has the function of clearing the email and password
+        // a way to avoid possible attacks and prevent vulnerability errors, using real_scape_string() function from conection.php
         $email = $mysqli->real_escape_string($_POST['email']);
         $password = $mysqli->real_escape_string($_POST['password_user']);
 
-        //sql query in the database
+        // sql query in the database
         $sql_code = "SELECT * FROM users_db WHERE email = '$email' AND password_user = '$password' ";
         $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: ". $mysqli->error);
 
-        //the number of registers 
+        // the number of registers 
         // it will return how many rows this query returned
-        //if the return is 0, there's no corresponding email or password in the database
+        // if the return is 0, there's no corresponding email or password in the database
         $qt = $sql_query->num_rows; 
 
-        //
+        // register's quantity 
         if($qt == 1) {
 
             // take the data and insert it into this variable
@@ -38,7 +40,7 @@ if(isset($_POST['email']) || isset($_POST['password_user'])) {
                 session_start();  
             }
             
-            //to search
+            // to search
             $_SESSION['id'] = $user['id'];
             $_SESSION['name'] = $user['name'];
 
@@ -47,7 +49,7 @@ if(isset($_POST['email']) || isset($_POST['password_user'])) {
             header("Location: page.php"); 
 
         } else {
-            echo "Login failed, incorrect email or password!";
+            die(include ('protect_layout.php'));
         }
 
     }
@@ -65,7 +67,7 @@ if(isset($_POST['email']) || isset($_POST['password_user'])) {
     <meta name="description" content="Página de Teste">
     <meta name="author" content="Gilberto Santos">
     <link rel="stylesheet" href="style.php">
-    <link rel="shortcut icon" type="imagex/png" href="/assets/img/img-icon.png">
+    <link rel="shortcut icon" type="imagex/png" href="img-icon.png">
 
 </head>
 

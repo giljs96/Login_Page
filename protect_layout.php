@@ -1,6 +1,3 @@
-<?php
-include ('protect.php')
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,8 +9,13 @@ include ('protect.php')
 </head>
 <body>
     <div class="logged-in">
-        <h1>Welcome to the new page, you're logged in!<br><?php echo $_SESSION['name']; ?></h1>
-        <a href="logout.php">Logout</a>
+        <h1>ERROR
+        <br>
+        You are not logged in.
+        <br>
+        Try again!
+        </h1>
+        <a href="index.php">LOGIN</a>
     </div>
 </body>
 </html>

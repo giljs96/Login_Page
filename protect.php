@@ -5,5 +5,5 @@ if(!isset($_SESSION)){
 }
 
 if(!isset($_SESSION['id'])) // There is no session Id
-    die("You cannot access this page. You are not logged in! <p><a href=\"index.php\">ENTRAR</a></p>")
+    die(include ('protect_layout.php'));
 ?>
