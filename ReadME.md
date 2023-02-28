@@ -37,9 +37,8 @@ If there is an attempt to login with an unregistered user (as in the image above
 In addition to the aforementioned error, this page also appears when the user makes a mistake in the password or email already registered in the database.
 
 
-# How to run the project
+# Users Already Registered
 
-USERS ALREADY REGISTERED
 ```bash
 Name: Michael Scott
 Email: best_boss@email.com
