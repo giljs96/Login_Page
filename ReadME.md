@@ -41,7 +41,7 @@ In addition to the aforementioned error, this page also appears when the user ma
 
 USERS ALREADY REGISTERED
 ```bash
-Name: Micheel Scott
+Name: Michael Scott
 Email: best_boss@email.com
 Password: test123
 
